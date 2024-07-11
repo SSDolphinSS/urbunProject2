@@ -1,9 +1,9 @@
 class Animal:
-
+    fed = False
+    alive = True
     def __init__(self, name):
         self.name = name
-        self.fed = False
-        self.alive = True
+
 
     def eat(self, food):
         if food.edible:
