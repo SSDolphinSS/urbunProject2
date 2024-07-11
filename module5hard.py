@@ -8,7 +8,7 @@ class User:
         self.age = age
 
     def __str__(self):
-        return f'User: {self.nickname}, Password: {self.password}, Age: {self.age}'
+        return f'{self.nickname}'
 
 
 class Video:
@@ -43,7 +43,8 @@ class UrTube:
                 print(f'Пользователь {nickname} уже существует!')
                 return
         self.users.append(User(nickname, hash(password), age))
-        self.log_in(nickname, password)
+        self.current_user = self.users[-1]
+
 
     def log_out(self):
         if self.current_user is None:
